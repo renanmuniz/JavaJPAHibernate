@@ -151,6 +151,85 @@ public class MenuPrincipal {
 				System.out.println("Conta não encontrada!");
 			}			
 			break;
+		case 5:
+			System.out.println("OPCAO 5 SELECIONADA.");
+
+			System.out.println("Deletar um Cliente");
+
+			System.out.println("Digite o codigo do Cliente: ");
+			Long idPFexc = entrada.nextLong();
+
+			PessoaFisica pf5 = em.find(PessoaFisica.class, idPFexc);
+
+			if (pf5 != null) {
+
+				em.getTransaction().begin();
+				em.remove(pf5);
+				em.getTransaction().commit();
+			} else {
+				System.out.println("Cliente não encontrado!");
+			}			
+			break;
+		case 6:
+			System.out.println("OPCAO 6 SELECIONADA.");
+
+			System.out.println("Deletar uma Conta");
+
+			System.out.println("Digite o codigo da Conta: ");
+			Long idCexc = entrada.nextLong();
+
+			Conta c6 = em.find(Conta.class, idCexc);
+
+			if (c6 != null) {
+
+				em.getTransaction().begin();
+				em.remove(c6);
+				em.getTransaction().commit();
+			} else {
+				System.out.println("Conta não encontrada!");
+			}			
+			break;
+		case 7:
+			System.out.println("OPCAO 7 SELECIONADA.");
+
+			System.out.println("Consultar um Cliente");
+
+			System.out.println("Digite o codigo do Cliente: ");
+			Long idPFCon = entrada.nextLong();
+
+			PessoaFisica pf7 = em.find(PessoaFisica.class, idPFCon);
+
+			if (pf7 != null) {
+
+				System.out.println("Nome.......:" + pf7.getNome());
+				System.out.println("Endereco...:" + pf7.getEndereco());
+				System.out.println("Telefone...:" + pf7.getTelefone());
+				
+			} else {
+				System.out.println("Cliente não encontrado!");
+			}			
+			break;
+		case 8:
+			System.out.println("OPCAO 8 SELECIONADA.");
+
+			System.out.println("Consultar uma Conta");
+
+			System.out.println("Digite o codigo da Conta: ");
+			Long idCCon = entrada.nextLong();
+
+			Conta c8 = em.find(Conta.class, idCCon);
+
+			if (c8 != null) {
+
+				System.out.println("Agencia....:" + c8.getAgencia());
+				System.out.println("Conta......:" + c8.getConta());
+				System.out.println("Saldo......:" + c8.getSaldo());
+				System.out.println("Titular....:" + c8.getPessoaFisica().getNome());
+				
+			} else {
+				System.out.println("Conta não encontrada!");
+			}			
+			break;
 		default:
 			System.out.println("Opcao Inválida. Encerrando.");
 			break;
