@@ -1,2 +1,2 @@
 # JavaJPAHibernate
-Projeto de estudo Java web com Maven, JPA e Hibernate.
+Projeto de estudo Java com Maven, JPA e Hibernate.
